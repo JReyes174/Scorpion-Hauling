@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scorpion Hauling | Eco-Friendly Junk Removal</title>
+  <meta name="description" content="Professional, eco-friendly junk removal. Fast scheduling, upfront pricing, and responsible donation & recycling." />
+
+  <style>
+    :root{
+      /* Professional eco palette */
+      --green-900:#1F3B22;
+      --green-800:#24512A;
+      --green-700:#2F6B31;
+      --green-500:#43A047;
+      --green-200:#CFE9D2;
+
+      --charcoal:#111613;
+      --ink:#151B16;
+      --muted:#5C6B61;
+
+      --bg:#F7FAF7;
+      --card:#FFFFFF;
+      --border:#E3EAE4;
+
+      --radius:18px;
+      --shadow: 0 14px 40px rgba(0,0,0,.08);
+      --shadow-soft: 0 10px 24px rgba(0,0,0,.06);
+      --max: 1140px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(1000px 520px at 10% 0%, rgba(67,160,71,.14), transparent 60%),
+        radial-gradient(900px 480px at 90% 10%, rgba(36,81,42,.10), transparent 60%),
+        var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; height:auto; display:block; }
+    .container{ max-width:var(--max); margin:0 auto; padding:0 22px; }
+
+    /* Header */
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background: rgba(247,250,247,.88);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:14px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 260px;
+    }
+    .brand img{ width:54px; height:54px; object-fit:contain; }
+    .brand .title{
+      font-weight:900;
+      letter-spacing:.2px;
+      line-height:1.05;
+    }
+    .brand .subtitle{
+      font-size:13px;
+      color:var(--muted);
+      font-weight:700;
+      margin-top:2px;
+    }
+
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:18px;
+      padding:0;
+      margin:0;
+      align-items:center;
+    }
+    nav a{
+      font-weight:800;
+      color:var(--charcoal);
+      padding:10px 12px;
+      border-radius:12px;
+      transition: background .15s ease;
+    }
+    nav a:hover{ background: rgba(207,233,210,.7); }
+
+    .actions{ display:flex; gap:10px; align-items:center; }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:11px 14px;
+      border-radius:14px;
+      font-weight:900;
+      border:1px solid transparent;
+      cursor:pointer;
+      transition: transform .08s ease, box-shadow .15s ease, background .15s ease;
+      white-space:nowrap;
+    }
+    .btn:active{ transform: translateY(1px); }
+
+    .btn-primary{
+      color:#fff;
+      background: linear-gradient(135deg, var(--green-700), var(--green-900));
+      box-shadow: 0 12px 24px rgba(31,59,34,.22);
+    }
+    .btn-primary:hover{ box-shadow: 0 14px 28px rgba(31,59,34,.28); }
+
+    .btn-outline{
+      background: rgba(255,255,255,.85);
+      border-color: var(--border);
+      color: var(--charcoal);
+    }
+    .btn-outline:hover{ background:#fff; box-shadow: var(--shadow-soft); }
+
+    /* Hero */
+    .hero{ padding: 56px 0 26px; }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .panel{
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero-main{ padding: 30px; position:relative; }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(207,233,210,.75);
+      border: 1px solid rgba(67,160,71,.25);
+      font-weight:900;
+      color: var(--green-900);
+      font-size:13px;
+    }
+
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(32px, 3.4vw, 48px);
+      line-height:1.06;
+      letter-spacing:-.8px;
+    }
+    .lead{
+      margin:0 0 18px;
+      color: var(--muted);
+      font-size:16px;
+      max-width: 62ch;
+    }
+
+    .hero-cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top: 18px;
+    }
+
+    .trust-row{
+      margin-top: 18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      background: rgba(247,250,247,.95);
+      border:1px solid var(--border);
+      font-weight:900;
+      color: var(--charcoal);
+      font-size:13px;
+    }
+
+    /* Aside */
+    .hero-side{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .side-block{ padding:18px; }
+    .side-block h3{
+      margin:0 0 6px;
+      letter-spacing:-.2px;
+    }
+    .side-block p{ margin:0; color:var(--muted); }
+    .divider{ height:1px; background: var(--border); }
+
+    .quick-list{
+      margin:12px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+    .quick-list li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      background: rgba(247,250,247,.95);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:10px 12px;
+      font-weight:800;
+      color: var(--charcoal);
+    }
+    .check{
+      width:18px; height:18px;
+      border-radius:6px;
+      background: rgba(67,160,71,.18);
+      border: 1px solid rgba(67,160,71,.28);
+      margin-top:2px;
+      display:grid;
+      place-items:center;
+      font-size:12px;
+      color: var(--green-900);
+      flex: 0 0 18px;
+    }
+
+    /* Sections */
+    section{ padding: 38px 0; }
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom: 16px;
+    }
+    .section-head h2{
+      margin:0;
+      font-size: clamp(22px, 2.4vw, 32px);
+      letter-spacing:-.3px;
+    }
+    .section-head p{
+      margin:0;
+      color: var(--muted);
+      max-width: 68ch;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .card{
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow-soft);
+    }
+    .icon{
+      width:46px; height:46px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background: rgba(207,233,210,.85);
+      border: 1px solid rgba(67,160,71,.22);
+      font-weight:900;
+      color: var(--green-900);
+      margin-bottom:10px;
+    }
+    .card h3{ margin:0 0 6px; }
+    .card p{ margin:0; color:var(--muted); }
+
+    /* Process */
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+    }
+    .step{
+      background: rgba(255,255,255,.9);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding:16px;
+    }
+    .step .n{
+      width:34px; height:34px;
+      border-radius:12px;
+      display:grid; place-items:center;
+      background: rgba(36,81,42,.10);
+      border:1px solid rgba(36,81,42,.18);
+      font-weight:900;
+      color: var(--green-900);
+      margin-bottom:8px;
+    }
+    .step h4{ margin:0 0 6px; }
+    .step p{ margin:0; color:var(--muted); }
+
+    /* Contact */
+    .contact-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    form{ display:grid; gap:10px; }
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:#fff;
+      font:inherit;
+      outline:none;
+    }
+    input:focus, textarea:focus{
+      border-color: rgba(67,160,71,.5);
+      box-shadow: 0 0 0 4px rgba(67,160,71,.12);
+    }
+    textarea{ min-height: 120px; resize: vertical; }
+    .fine{ font-size:13px; color:var(--muted); margin-top:8px; }
+
+    /* Footer */
+    footer{
+      padding:22px 0;
+      border-top:1px solid var(--border);
+      color: var(--muted);
+      font-weight:700;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      nav ul{ display:none; }
+      .cards{ grid-template-columns: 1fr; }
+      .steps{ grid-template-columns: 1fr 1fr; }
+      .contact-grid{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px){
+      .actions{ width:100%; }
+      .btn{ width:100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="#top" aria-label="Scorpion Hauling home">
+          <img src="logo.png" alt="Scorpion Hauling logo" />
+          <div>
+            <div class="title">Scorpion Hauling</div>
+            <div class="subtitle">Eco-Friendly Junk Removal</div>
+          </div>
+        </a>
+
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#eco">Eco Commitment</a></li>
+            <li><a href="#process">How It Works</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="actions">
+          <a class="btn btn-outline" href="tel:+15555555555">📞 (555) 555-5555</a>
+          <a class="btn btn-primary" href="#contact">Get a Free Quote</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="container hero">
+      <div class="hero-grid">
+        <section class="panel hero-main" aria-label="Hero">
+          <div class="pill">♻️ Donation & recycling prioritized</div>
+          <h1>Professional junk removal with an eco-friendly focus.</h1>
+          <p class="lead">
+            We help homeowners and businesses clear space quickly with upfront pricing, respectful crews,
+            and responsible disposal. Same-day options available.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">Request a Quote</a>
+            <a class="btn btn-outline" href="#services">See Services</a>
+          </div>
+
+          <div class="trust-row" aria-label="Trust badges">
+            <span class="tag">✅ Upfront pricing</span>
+            <span class="tag">🚚 Full-service hauling</span>
+            <span class="tag">🧤 Clean, respectful crews</span>
+            <span class="tag">♻️ Donation & recycling first</span>
+          </div>
+        </section>
+
+        <aside class="hero-side" aria-label="Quick info">
+          <div class="panel side-block">
+            <h3>Fast estimate</h3>
+            <p>Send a photo and we’ll reply with a quick ballpark quote.</p>
+            <ul class="quick-list">
+              <li><span class="check">✓</span>Photo quotes by text</li>
+              <li><span class="check">✓</span>Single items to full cleanouts</li>
+              <li><span class="check">✓</span>Residential & commercial</li>
+            </ul>
+          </div>
+
+          <div class="panel side-block">
+            <h3>Service area</h3>
+            <p>Replace this with your city/region (example: “Serving Phoenix & surrounding areas”).</p>
+            <div class="divider" style="margin:14px 0;"></div>
+            <p><strong>Hours:</strong> Mon–Sat, 8am–6pm</p>
+            <p class="fine">Tip: Add “Licensed & insured” if applicable.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Services</h2>
+            <p>Flexible pickup options for homes, businesses, rentals, and job sites.</p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="icon">🏠</div>
+            <h3>Residential removal</h3>
+            <p>Furniture, appliances, garage clutter, yard debris, and more.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🏢</div>
+            <h3>Commercial cleanouts</h3>
+            <p>Offices, retail spaces, storage units, and property turnovers.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🛠️</div>
+            <h3>Construction debris</h3>
+            <p>Renovation waste, drywall, lumber, and job-site cleanup.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="eco">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Eco commitment</h2>
+            <p>We aim to keep reusable materials out of landfills by donating and recycling whenever possible.</p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="icon">🤝</div>
+            <h3>Donate first</h3>
+            <p>Usable items are routed to donation partners when possible.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">♻️</div>
+            <h3>Recycle more</h3>
+            <p>We separate loads and route materials to appropriate facilities.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🧾</div>
+            <h3>Responsible disposal</h3>
+            <p>Remaining items are disposed of properly through approved methods.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>How it works</h2>
+            <p>A simple, professional process from quote to a clean space.</p>
+          </div>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="n">1</div>
+            <h4>Request a quote</h4>
+            <p>Call, text, or submit the form—photos help for accuracy.</p>
+          </div>
+          <div class="step">
+            <div class="n">2</div>
+            <h4>Schedule pickup</h4>
+            <p>Select a time window that fits your schedule.</p>
+          </div>
+          <div class="step">
+            <div class="n">3</div>
+            <h4>We handle the lifting</h4>
+            <p>Our team loads everything from where it sits—no hassle.</p>
+          </div>
+          <div class="step">
+            <div class="n">4</div>
+            <h4>Eco-friendly routing</h4>
+            <p>Donation and recycling first, then responsible disposal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Get a free quote</h2>
+            <p>Tell us what you need removed and we’ll reach out quickly.</p>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="card">
+            <h3 style="margin:0 0 8px;">Contact</h3>
+            <p style="margin:0 0 12px; color:var(--muted);">Replace placeholders with your real info.</p>
+
+            <p style="margin:0;"><strong>Phone:</strong> <a href="tel:+15555555555">(555) 555-5555</a></p>
+            <p style="margin:6px 0 0;"><strong>Email:</strong> <a href="mailto:quotes@scorpionhauling.com">quotes@scorpionhauling.com</a></p>
+            <p style="margin:6px 0 0;"><strong>Hours:</strong> Mon–Sat, 8am–6pm</p>
+
+            <p class="fine">Add “Licensed & insured” here if applicable.</p>
+          </div>
+
+          <div class="card">
+            <form action="#" method="post">
+              <input name="name" placeholder="Your name" required />
+              <input name="phone" placeholder="Phone number" required />
+              <input name="city" placeholder="City / area" />
+              <textarea name="details" placeholder="Items to remove (quantity, location, stairs, etc.)" required></textarea>
+              <button class="btn btn-primary" type="submit">Request quote</button>
+              <div class="fine">
+                This is a template form. To receive submissions, connect it to a service (Formspree, Netlify Forms, etc.).
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+        <div>© <span id="year"></span> Scorpion Hauling. All rights reserved.</div>
+        <div>Donation • Recycling • Responsible disposal</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
